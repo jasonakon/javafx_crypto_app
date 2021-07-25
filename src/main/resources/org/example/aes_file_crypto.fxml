@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<HBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AesFileCrypto">
+    <VBox alignment="TOP_LEFT" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171">
+        <Button fx:id="butaesBack" text="Back" onAction="#aesBack"></Button>
+    </VBox>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171">
+
+
+    <children>
+        <Label text="- AES File Configuration -" style="-fx-font-weight: bold" />
+        <TextField fx:id="textFieldAESPasswordInput" promptText="AES Password" alignment="CENTER" maxWidth="200" maxHeight="100" />
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- AES File Encrypt -" style="-fx-font-weight: bold" />
+        <Button fx:id="butSelectAesFile" text="Select File" maxWidth="200" maxHeight="100" onAction="#selectEncryptAesFile"/>
+        <Button fx:id="butAesFileEncrypt" text="Encrypt AES File" maxWidth="200" maxHeight="100" onAction="#encryptAesFile"/>
+        <Label fx:id="LabelAesFileEncrypt" text="File not selected" textFill="red" />
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- AES File Decrypt -" style="-fx-font-weight: bold" />
+        <Button fx:id="butSelectAesFileEncrypted" text="Select" maxWidth="200" maxHeight="100" onAction="#selectDecryptAesFile"/>
+        <Button fx:id="butAesFileDecrypt" text="Decrypt AES File" maxWidth="200" maxHeight="100" onAction="#decryptAesFile"/>
+        <Label fx:id="LabelAesFileDecrypt" text="File not selected" textFill="red" />
+    </children>
+</VBox>
+</HBox>

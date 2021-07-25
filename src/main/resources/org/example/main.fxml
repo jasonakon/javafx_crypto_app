@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainController">
+    <children>
+        <Label text="- PGP File Crypto - (contains key generation)" style="-fx-font-weight: bold" />
+        <Button fx:id="switchPgpFileCrypto" text="START" maxWidth="200" maxHeight="100" onAction="#switchToPgpFileCrypto"/>
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- RSA Crypto -" style="-fx-font-weight: bold" />
+        <Button fx:id="switchRsaCrypto" text="START" maxWidth="200" maxHeight="100" onAction="#switchToRsaCrypto"/>
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- PGP String Crypto -" style="-fx-font-weight: bold" />
+        <Button fx:id="switchPgpStrCrypto" text="START" maxWidth="200" maxHeight="100" onAction="#switchToPgpStrCrypto"/>
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- AES Crypto -" style="-fx-font-weight: bold" />
+        <Button fx:id="switchAesCrypto" text="START" maxWidth="200" maxHeight="100" onAction="#switchToAesCrypto"/>
+    </children>
+</VBox>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<HBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.RsaCrypto">
+    <VBox alignment="TOP_LEFT" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171">
+        <Button fx:id="butRsaBack" text="Back" onAction="#rsaBack"></Button>
+    </VBox>
+    <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" >
+        <children>
+            <Label text="- RSA Verify Signature -" style="-fx-font-weight: bold" />
+            <TextField fx:id="textfieldRsaEncryptedText" maxWidth="500" promptText="Input" alignment="CENTER" />
+            <TextField fx:id="textfieldRsaSignature" maxWidth="500" promptText="Output" alignment="CENTER"/>
+            <Button fx:id="butRsaVerifySignature" text="Verify RSA Signature" maxWidth="200" maxHeight="100" onAction="#verifyRsaSignature"/>
+            <Label fx:id="LabelRsaVerifySignature" text="Insert RSA Encrypted String" textFill="red" />
+        </children>
+    </VBox>
+    <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" >
+    <children>
+        <Label text="- RSA Encrypt -" style="-fx-font-weight: bold" />
+        <TextField fx:id="textfieldRsaEncrypt" maxWidth="500" promptText="Input" alignment="CENTER" />
+        <TextField fx:id="textfieldRsaEncryptOutput" maxWidth="500" promptText="Output" alignment="CENTER"/>
+        <Button fx:id="butRsaEncrypt" text="Encrypt RSA" maxWidth="200" maxHeight="100" onAction="#encryptRsa"/>
+        <Label fx:id="LabelRsaEncrypt" text="Insert RSA Encrypted String" textFill="red" />
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- RSA Decrypt -" style="-fx-font-weight: bold" />
+        <TextField fx:id="textfieldRsaDecrypt" maxWidth="500" promptText="Input" alignment="CENTER"/>
+        <TextField fx:id="textfieldRsaDecryptOutput" maxWidth="500" promptText="Output" alignment="CENTER"/>
+        <Button fx:id="butRsaDecrypt" text="Decrypt RSA" maxWidth="200" maxHeight="100" onAction="#decryptRsa"/>
+        <Label fx:id="LabelRsaDecrypt" text="Insert RSA Encrypted String" textFill="red" />
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- RSA Generate Keys -" style="-fx-font-weight: bold" />
+        <VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" >
+            <fx:define>
+                <ToggleGroup fx:id="toggleRsaKeySizeGroup" />
+            </fx:define>
+
+            <RadioButton fx:id="but1024" text="1024" toggleGroup="$toggleRsaKeySizeGroup">
+<!--                <HBox.margin>-->
+<!--                    <Insets right="3.0"/>-->
+<!--                </HBox.margin>-->
+            </RadioButton>
+
+            <RadioButton fx:id="but2048" text="2048" toggleGroup="$toggleRsaKeySizeGroup">
+<!--                <HBox.margin>-->
+<!--                    <Insets right="30.0"/>-->
+<!--                </HBox.margin>-->
+            </RadioButton>
+            <RadioButton fx:id="but4096" text="4096" toggleGroup="$toggleRsaKeySizeGroup">
+<!--                <HBox.margin>-->
+<!--                    <Insets right="30.0"/>-->
+<!--                </HBox.margin>-->
+            </RadioButton>
+        </VBox>
+        <Button fx:id="butRsaGenerateKeys" text="Generate Rsa Keys" maxWidth="200" maxHeight="100" onAction="#generateRsaKeys"/>
+        <Label fx:id="LabelRsaGenerateKeys" text="" textFill="red" />
+    </children>
+</VBox>
+</HBox>

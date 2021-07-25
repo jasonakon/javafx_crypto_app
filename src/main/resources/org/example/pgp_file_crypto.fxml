@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<HBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PgpFileCrypto">
+<VBox alignment="TOP_LEFT" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171">
+    <Button fx:id="butPgpBack" text="Back" onAction="#pgpFileBack"></Button>
+</VBox>
+    <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" >
+        <children>
+            <Label text="- PGP Configuration -" style="-fx-font-weight: bold" />
+            <TextArea fx:id="textAreaPgpPublicKey" maxWidth="300" prefHeight="50" promptText="PGP Public Key" />
+            <TextArea fx:id="textAreaPgpPrivateKey" maxWidth="300" prefHeight="50" promptText="PGP Private Key" />
+            <TextField fx:id="textFieldPgpPassword" promptText="PGP Password" alignment="CENTER" maxWidth="200" maxHeight="100" />
+        </children>
+        <Label text="-----------------------------------------------------" />
+        <children>
+            <Label text="- PGP Key Generation -" style="-fx-font-weight: bold" />
+            <TextArea fx:id="textAreaGenPgpPublicKeyOutput" maxWidth="300" prefHeight="50" promptText="PGP Public Key" />
+            <TextArea fx:id="textAreaGenPgpPrivateKeyOutput" maxWidth="300" prefHeight="50" promptText="PGP Private Key" />
+            <TextField fx:id="textFieldGenPgpPasswordInput" promptText="PGP Password" alignment="CENTER" maxWidth="200" maxHeight="100" />
+            <Label fx:id="labelGenPgpKey" text="Insert PGP Password" textFill="red" />
+            <Button fx:id="butGenPgpKey" text="Generate PGP Keys" maxWidth="200" maxHeight="100" onAction="#generatePgpKey"/>
+        </children>
+    </VBox>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" >
+    <children>
+        <Label text="- PGP File Encrypt -" style="-fx-font-weight: bold" />
+        <Button fx:id="butSelectPgpFileraw" text="Select File" maxWidth="200" maxHeight="100" onAction="#selectEncryptPgpFile"/>
+        <Button fx:id="butPgpFileEncrypt" text="Encrypt PGP File" maxWidth="200" maxHeight="100" onAction="#encryptPgpFile"/>
+        <Label fx:id="LabelPgpFileEncrypt" text="File not selected" textFill="red" />
+    </children>
+    <Label text="-----------------------------------------------------" />
+    <children>
+        <Label text="- PGP File Decrypt -" style="-fx-font-weight: bold" />
+        <Button fx:id="butSelectPgpFileEncrypted" text="Select" maxWidth="200" maxHeight="100" onAction="#selectDecryptPgpFile"/>
+        <Button fx:id="butPgpFileDecrypt" text="Decrypt PGP File" maxWidth="200" maxHeight="100" onAction="#decryptPgpFile"/>
+        <Label fx:id="LabelPgpFileDecrypt" text="File not selected" textFill="red" />
+    </children>
+</VBox>
+</HBox>
